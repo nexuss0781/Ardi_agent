@@ -21,15 +21,15 @@
 - [x] Document the planned architecture in a design document (e.g., `architecture.md`)
 
 ### Phase 3: Implement Core Agentic AI Logic (Phase 1: Query Processing)
-- [ ] Implement `Language Expert`
-- [ ] Implement `Clarification Agent`
-- [ ] Implement `Idea Generator`
-- [ ] Implement `Analysis Agent`
-- [ ] Implement `Synthesizer Agent`
-- [ ] Implement `Report Agent` (pre-implementation)
-- [ ] Implement `Organizer Agent` (Phase 1)
-- [ ] Implement `Presenter Agent` (Phase 1)
-- [ ] Implement `Quality Assurance` (for Phase 1)
+- [x] Implement `Language Expert`
+- [x] Implement `Clarification Agent`
+- [x] Implement `Idea Generator`
+- [x] Implement `Analysis Agent`
+- [x] Implement `Synthesizer Agent`
+- [x] Implement `Report Agent` (pre-implementation)
+- [x] Implement `Organizer Agent` (Phase 1)
+- [x] Implement `Presenter Agent` (Phase 1)
+- [x] Implement `Quality Assurance` (for Phase 1)
 
 ### Phase 4: Implement Core Agentic AI Logic (Phase 2: Implementation)
 - [ ] Implement `Tasker Agent`
