@@ -1,6 +1,7 @@
 class SynthesizerAgent:
     def __init__(self):
-        pass
+        with open("prompts/synthesizer_agent.md", "r") as f:
+            self.prompt = f.read()
 
     def synthesize_content(self, idea_content: str, analysis_content: str) -> str:
         # This is a placeholder for the actual implementation.
