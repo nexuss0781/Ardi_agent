@@ -1,6 +1,7 @@
 class AnalysisAgent:
     def __init__(self):
-        pass
+        with open("prompts/analysis_agent.md", "r") as f:
+            self.prompt = f.read()
 
     def gather_and_analyze(self, idea_content: str) -> str:
         # This is a placeholder for the actual implementation.
