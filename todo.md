@@ -98,10 +98,10 @@
 - [x] Add animations and transitions
 
 ### Phase 6: Integrate with backend and test functionality
-- [ ] Set up API calls to Ardi_agent backend
-- [ ] Display agent output in the frontend
-- [ ] Implement user input for agent interaction
-- [ ] Conduct integration testing
+- [x] Set up API calls to Ardi_agent backend
+- [x] Display agent output in the frontend
+- [x] Implement user input for agent interaction
+- [x] Conduct integration testing
 
 ### Phase 7: Final testing, optimization and deployment
 - [ ] Perform comprehensive testing
