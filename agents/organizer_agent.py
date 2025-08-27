@@ -1,6 +1,7 @@
 class OrganizerAgent:
     def __init__(self):
-        pass
+        with open("prompts/organizer_agent.md", "r") as f:
+            self.prompt = f.read()
 
     def beautify_content(self, content: str) -> str:
         # This is a placeholder for the actual implementation.
