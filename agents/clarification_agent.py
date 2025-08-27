@@ -1,11 +1,11 @@
-from openai import OpenAI
+from utils.llm_client import LLMClient
 from utils.rate_limiter import RateLimiter
 
 class ClarificationAgent:
     def __init__(self):
         with open("Ardi_agent/prompts/clarification_agent.md", "r") as f:
             self.prompt = f.read()
-        self.client = OpenAI()
+        self.client = LLMClient()
         self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
         self.clarification_todo = {
             "Audience": False,
@@ -14,14 +14,7 @@ class ClarificationAgent:
 
     def clarify_objectives(self, query: str) -> str:
         self.rate_limiter.wait_for_next_call()
-        response = self.client.chat.completions.create(
-            model="gemini-2.5-flash", # Or another suitable model
-            messages=[
-                {"role": "system", "content": self.prompt},
-                {"role": "user", "content": query}
-            ]
-        )
-        clarified_content = response.choices[0].message.content
+        clarified_content = self.client.generate_content(self.prompt + "\n" + query)
         
         # Placeholder for actual logic to update clarification_todo based on LLM output
         # For now, we'll assume the LLM clarifies these points.
