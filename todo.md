@@ -93,9 +93,9 @@
 - [x] Create interactive elements (buttons, input fields)
 
 ### Phase 5: Add styling and aesthetic enhancements
-- [ ] Apply Manus-like aesthetic (color palette, typography)
-- [ ] Implement responsive design
-- [ ] Add animations and transitions
+- [x] Apply Manus-like aesthetic (color palette, typography)
+- [x] Implement responsive design
+- [x] Add animations and transitions
 
 ### Phase 6: Integrate with backend and test functionality
 - [ ] Set up API calls to Ardi_agent backend
