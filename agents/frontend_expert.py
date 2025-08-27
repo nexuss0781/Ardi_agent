@@ -1,6 +1,7 @@
 class FrontendExpert:
     def __init__(self):
-        pass
+        with open("prompts/frontend_expert.md", "r") as f:
+            self.prompt = f.read()
 
     def develop_frontend(self, frontend_tasks: list) -> str:
         # This is a placeholder for the actual implementation.
