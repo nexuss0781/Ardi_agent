@@ -1,38 +1,39 @@
-Okay, I understand you need a web-based application for task management, supporting basic CRUD operations (Create, View, Update, Delete) for tasks, and tracking task status and due dates. This is a clear starting point.
+Understood. As your Clarification Agent, I'm here to ensure we capture all necessary details for your task management web application.
 
-To ensure we build exactly what you need, I have some clarifying questions. Think of me as your development team trying to get all the necessary details before we start coding.
-
-Let's begin with some fundamental aspects:
-
-1.  **User Management & Access:**
-    *   Will this application be for a single user, or will multiple users need to access it?
-    *   If multiple users, will they share tasks, or will each user have their own private tasks?
-    *   Is user authentication (e.g., login/password) required? If so, any specific requirements for it (e.g., social logins, email verification)?
-    *   Do we need different user roles or permissions (e.g., admin, regular user)?
-
-2.  **Task Attributes & Details:**
-    *   Beyond "status" and "due date," what other essential attributes should a task have? (e.g., title/name, description, priority, assigned user, creation date, completion date, tags/categories, attachments?)
-    *   What are the possible values for "status"? (e.g., To Do, In Progress, Done, Blocked?)
-    *   How flexible should the due date be? (e.g., just a date, or time as well?)
-
-3.  **Task Organization & Views:**
-    *   How do users typically want to view their tasks? (e.g., a simple list, a calendar view, Kanban board, grouped by status/due date/priority?)
-    *   Will tasks need to be organized into projects, lists, or other hierarchical structures?
-    *   Are there any filtering, sorting, or search capabilities required for tasks?
-
-Please provide as much detail as you can for these points. Once we clarify these, we can move on to other areas like notifications, reporting, and non-functional requirements.
+Please elaborate on the following points to help formalize your request and establish a precise scope:
 
 ---
-**Internal `todo.md` (updated based on initial request):**
-*   [ ] Clarify user authentication/authorization requirements (single vs. multi-user, shared tasks, roles).
-*   [ ] Define core task attributes beyond status and due date (e.g., title, description, priority, tags, attachments).
-*   [ ] Specify possible values for "status" and "due date" format.
-*   [ ] Understand task organization/categorization needs (projects, lists, hierarchy).
-*   [ ] Determine required task views (list, calendar, Kanban) and filtering/sorting/search capabilities.
-*   [ ] Identify reporting/notification requirements (future).
-*   [ ] Identify non-functional requirements (performance, scalability, security, UI/UX) (future).
-*   [ ] Discuss technology preferences (future).
-*   [ ] Clarify deployment strategy (future).
 
-**`clarify.md` (current content - will be populated with user's answers):**
-*(Empty for now, waiting for your input)*
+### **1. Core Functionality:**
+
+*   **Task Creation:** What essential fields should a task include (e.g., title, description, due date, priority level, status, assignee)?
+*   **Task Viewing:** How should tasks be displayed (e.g., a simple list, a calendar view, a Kanban board, grouped by category/status, a combination)?
+*   **Task Editing:** Confirm if the ability to modify *all* task details is required.
+*   **Task Deletion:** Confirm if the ability to remove tasks is required.
+*   **Task Status Management:** What are the specific possible statuses for a task (e.g., To Do, In Progress, Completed, Pending, Blocked, On Hold, Canceled)?
+
+### **2. User Management & Scope:**
+
+*   Is this application intended for a **single user**, or will it support **multiple users**?
+*   If multiple users, will **user authentication** (login/logout, registration) be required?
+*   Will users need to **share tasks** or collaborate on projects within the application? If so, how (e.g., assign tasks to others, shared projects)?
+
+### **3. Advanced Features (Optional but common):**
+
+*   **Categorization/Tagging:** Ability to organize tasks using categories, tags, or projects.
+*   **Search & Filtering:** Ability to search for tasks and filter them by various criteria (e.g., status, due date, priority, category, assignee, creation date).
+*   **Sorting:** Ability to sort tasks (e.g., by due date, priority, creation date, title).
+*   **Reminders/Notifications:** Should the application provide reminders for upcoming or overdue tasks (e.g., in-app, email, push notifications)?
+*   **Subtasks/Checklists:** Ability to break down tasks into smaller, manageable sub-components.
+*   **Recurring Tasks:** Ability to set tasks that repeat automatically (e.g., daily, weekly, monthly, yearly, custom intervals)?
+*   **Attachments:** Ability to attach files or links to tasks.
+*   **Reporting/Analytics:** Any need for summaries, progress tracking, or analytics on task completion and user productivity?
+
+### **4. User Interface & Experience (UI/UX):**
+
+*   Are there any specific design preferences, desired aesthetics, or existing task management applications that serve as inspiration (e.g., Trello, Asana, Todoist, Monday.com)?
+*   Should the application be **responsive** (optimized for various devices like desktops, tablets, and mobile phones)?
+
+---
+
+Please provide as much detail as possible for each point. Your answers will directly shape the project's scope and subsequent development. I'll update our internal `todo.md` as we address each item and compile the final `clarify.md` once we have a comprehensive understanding.

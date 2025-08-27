@@ -12,11 +12,12 @@ class SynthesizerAgent:
         self.rate_limiter.wait_for_next_call()
         combined_content = f"Ideas:\n{idea_content}\n\nAnalysis:\n{analysis_content}"
         response = self.client.chat.completions.create(
-            model="gemini-2.5-flash", # Or another suitable model
+            model="gemini-2.5-flash",
             messages=[
                 {"role": "system", "content": self.prompt},
                 {"role": "user", "content": combined_content}
-            ]
+            ],
+            max_tokens=4000 # Increased token limit
         )
         synthesized_content = response.choices[0].message.content
         return synthesized_content

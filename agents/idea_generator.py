@@ -11,11 +11,12 @@ class IdeaGenerator:
     def generate_features(self, clarified_content: str) -> str:
         self.rate_limiter.wait_for_next_call()
         response = self.client.chat.completions.create(
-            model="gemini-2.5-flash", # Or another suitable model
+            model="gemini-2.5-flash",
             messages=[
-                {"role": "system", "content": self.prompt},
+                {"role": "system", "content": self.prompt + "\n\nEnsure the response is a complete and comprehensive document, without truncation."},
                 {"role": "user", "content": clarified_content}
-            ]
+            ],
+            max_tokens=4000 # Increased token limit
         )
         features = response.choices[0].message.content
         return features
