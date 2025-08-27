@@ -1,6 +1,7 @@
 class QualityAssuranceAgent:
     def __init__(self):
-        pass
+        with open("prompts/quality_assurance_agent.md", "r") as f:
+            self.prompt = f.read()
 
     def review_content(self, content: str, content_type: str) -> bool:
         # This is a placeholder for the actual implementation.
