@@ -9,12 +9,12 @@
 - [x] Create `todo.md` file
 - [x] Add `todo.md` to Git
 - [x] Add `ArdiAgent.md` to Git
-- [ ] Commit initial files
-- [ ] Push to GitHub repository
+- [x] Commit initial files
+- [x] Push to GitHub repository
 
 ### Phase 2: Plan the Application Architecture and Development
-- [ ] Analyze `ArdiAgent.md` for detailed requirements
-- [ ] Design the overall architecture of the Agentic AI system
+- [x] Analyze `ArdiAgent.md` for detailed requirements
+- [x] Design the overall architecture of the Agentic AI system
 - [ ] Outline the interaction flow between different agents
 - [ ] Define data structures for inter-agent communication
 - [ ] Plan the implementation strategy for each agent
