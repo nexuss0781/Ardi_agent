@@ -21,7 +21,7 @@ class AnalysisAgent:
         return analysis
 
     def save_analysis_content(self, content: str):
-        with open("/home/ubuntu/ardi_agent/analysis.md", "w") as f:
+        with open("/home/ubuntu/Ardi_agent/analysis.md", "w") as f:
             f.write(content)
         print("Analysis content saved to analysis.md")
 

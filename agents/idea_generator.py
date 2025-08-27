@@ -21,7 +21,7 @@ class IdeaGenerator:
         return features
 
     def save_idea_content(self, content: str):
-        with open("/home/ubuntu/ardi_agent/idea.md", "w") as f:
+        with open("/home/ubuntu/Ardi_agent/idea.md", "w") as f:
             f.write(content)
         print("Idea content saved to idea.md")
 
