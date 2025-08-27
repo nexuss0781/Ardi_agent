@@ -15,14 +15,14 @@
 - [x] Implement `orchestrator.py` or `main.py` to manage agent flow.
 
 ## Phase 4: Replace OpenAI with Gemini 2.5 Flash and centralize configuration
-- [ ] Remove all OpenAI API calls.
-- [ ] Integrate Gemini 2.5 Flash for LLM interactions.
-- [ ] Create a `.env` file for API tokens and other sensitive information.
-- [ ] Centralize token location in a dedicated configuration file.
+- [x] Remove all OpenAI API calls.
+- [x] Integrate Gemini 2.5 Flash for LLM interactions.
+- [x] Create a `.env` file for API tokens and other sensitive information.
+- [x] Centralize token location in a dedicated configuration file.
 
 ## Phase 5: Implement session history and action tracking
-- [ ] Implement session history for LLM interactions.
-- [ ] Ensure every agent action is tracked and stored.
+- [x] Implement session history for LLM interactions.
+- [x] Ensure every agent action is tracked and stored.
 - [ ] Enable the model to resume from where it stopped.
 - [ ] Allow visibility into previous actions of other agents.
 

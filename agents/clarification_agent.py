@@ -1,11 +1,12 @@
 from utils.llm_client import LLMClient
 from utils.rate_limiter import RateLimiter
+from utils.session_manager import SessionManager
 
 class ClarificationAgent:
-    def __init__(self):
+    def __init__(self, session_manager: SessionManager = None):
         with open("Ardi_agent/prompts/clarification_agent.md", "r") as f:
             self.prompt = f.read()
-        self.client = LLMClient()
+        self.client = LLMClient(session_manager=session_manager)
         self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
         self.clarification_todo = {
             "Audience": False,
@@ -17,7 +18,7 @@ class ClarificationAgent:
         clarified_content = self.client.generate_content(self.prompt + "\n" + query)
         
         # Placeholder for actual logic to update clarification_todo based on LLM output
-        # For now, we'll assume the LLM clarifies these points.
+        # For now, we\"ll assume the LLM clarifies these points.
         self.clarification_todo["Audience"] = True
         self.clarification_todo["Comprehensive"] = True
 

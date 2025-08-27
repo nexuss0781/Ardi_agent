@@ -1,11 +1,12 @@
 from utils.llm_client import LLMClient
 from utils.rate_limiter import RateLimiter
+from utils.session_manager import SessionManager
 
 class IdeaGenerator:
-    def __init__(self):
+    def __init__(self, session_manager: SessionManager = None):
         with open("Ardi_agent/prompts/idea_generator.md", "r") as f:
             self.prompt = f.read()
-        self.client = LLMClient()
+        self.client = LLMClient(session_manager=session_manager)
         self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
 
     def generate_features(self, clarified_content: str) -> str:
