@@ -11,11 +11,12 @@ class AnalysisAgent:
     def gather_and_analyze(self, idea_content: str) -> str:
         self.rate_limiter.wait_for_next_call()
         response = self.client.chat.completions.create(
-            model="gemini-2.5-flash", # Or another suitable model
+            model="gemini-2.5-flash",
             messages=[
                 {"role": "system", "content": self.prompt},
                 {"role": "user", "content": idea_content}
-            ]
+            ],
+            max_tokens=4000 # Increased token limit
         )
         analysis = response.choices[0].message.content
         return analysis
