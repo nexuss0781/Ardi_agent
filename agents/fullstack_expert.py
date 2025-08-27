@@ -1,6 +1,7 @@
 class FullstackExpert:
     def __init__(self):
-        pass
+        with open("prompts/fullstack_expert.md", "r") as f:
+            self.prompt = f.read()
 
     def check_integrity(self, backend_summary: str, frontend_summary: str) -> str:
         # This is a placeholder for the actual implementation.
