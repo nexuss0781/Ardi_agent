@@ -84,8 +84,8 @@
 
 ### Phase 3: Set up frontend project structure and initial components
 - [x] Initialize React project
-- [ ] Set up basic routing (if applicable)
-- [ ] Create placeholder components for main sections
+- [x] Set up basic routing (if applicable)
+- [x] Create placeholder components for main sections
 
 ### Phase 4: Implement core UI components and layout
 - [ ] Develop navigation bar
