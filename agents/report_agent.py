@@ -1,6 +1,7 @@
 class ReportAgent:
     def __init__(self):
-        pass
+        with open("prompts/report_agent.md", "r") as f:
+            self.prompt = f.read()
 
     def generate_roadmap(self, synthesis_content: str) -> str:
         # This is a placeholder for the actual implementation.
