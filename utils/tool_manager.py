@@ -1,9 +1,11 @@
 import importlib
 import os
+from utils.session_manager import SessionManager
 
 class ToolManager:
-    def __init__(self):
+    def __init__(self, session_manager: SessionManager = None):
         self.tools = {}
+        self.session_manager = session_manager
         self._load_tools()
 
     def _load_tools(self):
@@ -17,9 +19,11 @@ class ToolManager:
                     for item_name in dir(module):
                         item = getattr(module, item_name)
                         if isinstance(item, type) and hasattr(item, '__init__') and item.__module__ == module.__name__:
-                            # Assuming tools are classes that can be instantiated without args for now
-                            # This needs to be more robust for tools with specific init requirements
-                            self.tools[item_name] = item()
+                            # Pass session_manager to tools that accept it
+                            if 'session_manager' in item.__init__.__code__.co_varnames:
+                                self.tools[item_name] = item(session_manager=self.session_manager)
+                            else:
+                                self.tools[item_name] = item()
                             print(f"Loaded tool: {item_name}")
                 except Exception as e:
                     print(f"Error loading tool {module_name}: {e}")
