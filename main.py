@@ -11,6 +11,7 @@ from agents.tasker_agent import TaskerAgent
 from agents.backend_expert import BackendExpert
 from agents.frontend_expert import FrontendExpert
 from agents.fullstack_expert import FullstackExpert
+from agents.debugging_agent import DebuggingAgent
 
 def run_phase1(user_query: str):
     print("--- Phase 1: Query Processing ---")
@@ -96,6 +97,7 @@ def run_phase2(synthesized_content: str):
     report_agent = ReportAgent()
     synth_agent = SynthesizerAgent()
     org_agent = OrganizerAgent()
+    debug_agent = DebuggingAgent()
     pres_agent = PresenterAgent()
 
     # 1. Tasker Agent
@@ -141,11 +143,10 @@ def run_phase2(synthesized_content: str):
     org_agent.save_organized_content(organized_post_synthesis, "organized_post_synthesis.md")
     print(f"Organizer Agent Output (Phase 2):\n{organized_post_synthesis}")
 
-    # Debugging Agent (Placeholder - actual implementation would involve more logic)
-    # debug_agent = DebuggingAgent()
-    # debug_agent.debug_issues()
+    # 9. Debugging Agent (Placeholder - actual implementation would involve more logic)
+    debug_agent.debug_issues("Simulated issue: API endpoint not responding.")
 
-    # 9. Presenter Agent (Phase 2)
+    # 10. Presenter Agent (Phase 2)
     phase2_summary = "Phase 2 (Implementation) completed successfully. We have classified tasks, developed backend and frontend, performed fullstack integration, and generated post-implementation reports."
     presentation = pres_agent.present_phase_summary("Phase 2 Summary", phase2_summary)
     pres_agent.save_presentation_content(presentation, "phase2_summary.md")
