@@ -1,15 +1,23 @@
+from openai import OpenAI
+from utils.rate_limiter import RateLimiter
+
 class QuizCreator:
     def __init__(self):
-        pass
+        self.client = OpenAI()
+        self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
 
     def create_quiz(self, topic: str, num_questions: int) -> str:
-        # This is a placeholder for the actual implementation.
-        # In a real scenario, this would involve generating quiz questions
-        # based on the topic and number of questions.
-        quiz_content = f"Quiz on {topic} (Number of questions: {num_questions})\n\n"
-        for i in range(1, num_questions + 1):
-            quiz_content += f"Question {i}: What is a key concept related to {topic}? (Simulated)\n"
-            quiz_content += f"Answer {i}: (Simulated Answer)\n\n"
+        self.rate_limiter.wait_for_next_call()
+        prompt = f"Generate a {num_questions}-question quiz on the topic of 
+'{topic}'. For each question, provide the question and the answer."
+        response = self.client.chat.completions.create(
+            model="gpt-4o", # Or another suitable model
+            messages=[
+                {"role": "system", "content": "You are a quiz generator. Create clear and concise quiz questions and answers."},
+                {"role": "user", "content": prompt}
+            ]
+        )
+        quiz_content = response.choices[0].message.content
         return quiz_content
 
 

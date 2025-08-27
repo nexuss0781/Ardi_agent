@@ -1,16 +1,23 @@
+from openai import OpenAI
+from utils.rate_limiter import RateLimiter
+
 class AnalysisAgent:
     def __init__(self):
-        with open("prompts/analysis_agent.md", "r") as f:
+        with open("Ardi_agent/prompts/analysis_agent.md", "r") as f:
             self.prompt = f.read()
+        self.client = OpenAI()
+        self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
 
     def gather_and_analyze(self, idea_content: str) -> str:
-        # This is a placeholder for the actual implementation.
-        # In a real scenario, this would involve using an internet tool to gather data.
-        # For now, it will simulate gathering some generic analysis.
-        analysis = f"Analysis based on idea: {idea_content}\n"
-        analysis += "- Market trends: Growing demand for similar applications.\n"
-        analysis += "- Competitor analysis: Existing solutions lack comprehensive features.\n"
-        analysis += "- Potential features: AI-powered recommendations, real-time collaboration.\n"
+        self.rate_limiter.wait_for_next_call()
+        response = self.client.chat.completions.create(
+            model="gemini-2.5-flash", # Or another suitable model
+            messages=[
+                {"role": "system", "content": self.prompt},
+                {"role": "user", "content": idea_content}
+            ]
+        )
+        analysis = response.choices[0].message.content
         return analysis
 
     def save_analysis_content(self, content: str):
