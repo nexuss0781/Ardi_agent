@@ -15,10 +15,10 @@
 ### Phase 2: Plan the Application Architecture and Development
 - [x] Analyze `ArdiAgent.md` for detailed requirements
 - [x] Design the overall architecture of the Agentic AI system
-- [ ] Outline the interaction flow between different agents
-- [ ] Define data structures for inter-agent communication
-- [ ] Plan the implementation strategy for each agent
-- [ ] Document the planned architecture in a design document (e.g., `architecture.md`)
+- [x] Outline the interaction flow between different agents
+- [x] Define data structures for inter-agent communication
+- [x] Plan the implementation strategy for each agent
+- [x] Document the planned architecture in a design document (e.g., `architecture.md`)
 
 ### Phase 3: Implement Core Agentic AI Logic (Phase 1: Query Processing)
 - [ ] Implement `Language Expert`
