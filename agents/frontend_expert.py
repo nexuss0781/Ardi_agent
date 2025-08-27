@@ -1,16 +1,25 @@
+from openai import OpenAI
+from utils.rate_limiter import RateLimiter
+
 class FrontendExpert:
     def __init__(self):
-        with open("prompts/frontend_expert.md", "r") as f:
+        with open("Ardi_agent/prompts/frontend_expert.md", "r") as f:
             self.prompt = f.read()
+        self.client = OpenAI()
+        self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
 
     def develop_frontend(self, frontend_tasks: list) -> str:
-        # This is a placeholder for the actual implementation.
-        # In a real scenario, this would involve writing actual frontend code
-        # based on the provided tasks, focusing on aesthetics and UX.
-        frontend_summary = "Frontend development completed for the following tasks:\n"
-        for task in frontend_tasks:
-            frontend_summary += f"- {task}\n"
-        frontend_summary += "\nFrontend UI/UX elements are ready."
+        self.rate_limiter.wait_for_next_call()
+        tasks_str = "\n".join(frontend_tasks)
+        user_content = f"Develop frontend for the following tasks:\n{tasks_str}"
+        response = self.client.chat.completions.create(
+            model="gemini-2.5-flash", # Or another suitable model
+            messages=[
+                {"role": "system", "content": self.prompt},
+                {"role": "user", "content": user_content}
+            ]
+        )
+        frontend_summary = response.choices[0].message.content
         return frontend_summary
 
     def save_frontend_summary(self, content: str):

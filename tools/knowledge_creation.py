@@ -1,13 +1,24 @@
+from openai import OpenAI
+from utils.rate_limiter import RateLimiter
+
 class KnowledgeCreation:
     def __init__(self):
-        pass
+        with open("Ardi_agent/prompts/knowledge_creation.md", "r") as f:
+            self.prompt = f.read()
+        self.client = OpenAI()
+        self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
 
     def create_knowledge_base(self, topic: str, content: str) -> str:
-        # This is a placeholder for the actual implementation.
-        # In a real scenario, this would involve structuring and storing knowledge
-        # in a retrievable format.
-        knowledge_entry = f"## Knowledge Base Entry: {topic}\n\n{content}\n\n"
-        knowledge_entry += "_This knowledge entry has been added to the system._"
+        self.rate_limiter.wait_for_next_call()
+        user_content = f"Topic: {topic}\nContent: {content}"
+        response = self.client.chat.completions.create(
+            model="gpt-4o", # Or another suitable model
+            messages=[
+                {"role": "system", "content": self.prompt},
+                {"role": "user", "content": user_content}
+            ]
+        )
+        knowledge_entry = response.choices[0].message.content
         return knowledge_entry
 
     def save_knowledge_entry(self, content: str, filename: str = "knowledge_entry.md"):

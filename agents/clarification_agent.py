@@ -1,21 +1,30 @@
+from openai import OpenAI
+from utils.rate_limiter import RateLimiter
+
 class ClarificationAgent:
     def __init__(self):
-        with open("prompts/clarification_agent.md", "r") as f:
+        with open("Ardi_agent/prompts/clarification_agent.md", "r") as f:
             self.prompt = f.read()
+        self.client = OpenAI()
+        self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
         self.clarification_todo = {
             "Audience": False,
             "Comprehensive": False
         }
 
     def clarify_objectives(self, query: str) -> str:
-        # This is a placeholder for the actual implementation.
-        # In a real scenario, this would involve asking clarifying questions to the user.
-        # For now, let's assume some basic clarification happens.
-        clarified_content = f"Clarified objectives for: {query}\n"
-        clarified_content += "- Audience: (Assumed general audience for now)\n"
-        clarified_content += "- Comprehensive: (Assumed normal comprehensiveness for now)\n"
+        self.rate_limiter.wait_for_next_call()
+        response = self.client.chat.completions.create(
+            model="gemini-2.5-flash", # Or another suitable model
+            messages=[
+                {"role": "system", "content": self.prompt},
+                {"role": "user", "content": query}
+            ]
+        )
+        clarified_content = response.choices[0].message.content
         
-        # Mark these as addressed for now
+        # Placeholder for actual logic to update clarification_todo based on LLM output
+        # For now, we'll assume the LLM clarifies these points.
         self.clarification_todo["Audience"] = True
         self.clarification_todo["Comprehensive"] = True
 
@@ -25,7 +34,7 @@ class ClarificationAgent:
         return self.clarification_todo
 
     def save_clarified_content(self, content: str):
-        with open("/home/ubuntu/ardi_agent/clarify.md", "w") as f:
+        with open("/home/ubuntu/Ardi_agent/clarify.md", "w") as f:
             f.write(content)
         print("Clarified content saved to clarify.md")
 

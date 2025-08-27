@@ -1,17 +1,23 @@
+from openai import OpenAI
+from utils.rate_limiter import RateLimiter
+
 class IdeaGenerator:
     def __init__(self):
-        with open("prompts/idea_generator.md", "r") as f:
+        with open("Ardi_agent/prompts/idea_generator.md", "r") as f:
             self.prompt = f.read()
+        self.client = OpenAI()
+        self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
 
     def generate_features(self, clarified_content: str) -> str:
-        # This is a placeholder for the actual implementation.
-        # In a real scenario, this would involve generating comprehensive feature analysis
-        # based on the clarified content without external internet tools.
-        features = f"Comprehensive feature analysis based on: {clarified_content}\n"
-        features += "- User Authentication (Login, Logout, Registration)\n"
-        features += "- User Profile Management\n"
-        features += "- Data Storage and Retrieval\n"
-        features += "- Basic UI/UX elements\n"
+        self.rate_limiter.wait_for_next_call()
+        response = self.client.chat.completions.create(
+            model="gemini-2.5-flash", # Or another suitable model
+            messages=[
+                {"role": "system", "content": self.prompt},
+                {"role": "user", "content": clarified_content}
+            ]
+        )
+        features = response.choices[0].message.content
         return features
 
     def save_idea_content(self, content: str):

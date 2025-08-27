@@ -42,22 +42,28 @@
 - [x] Implement `Debugging Agent`
 - [x] Implement `Presenter Agent` (Phase 2)
 - [x] Implement `Quality Assurance` (for Phase 2)
-### Phase 5: Integrate File Management and Other Tools
-- [ ] Implement file management tools (Write, Read, Edit, Modify, Delete, List Directory, Save Version, Restore Version, Read Folder, Ignore File, Ignore Folder, Remove File, Remove Folder, View Context)
-- [ ] Implement other tools (Quiz Creator, Knowledge Creation, Internet, Chatting, Terminal Integration)
 
-### Phase 6: Testing and Refinement
+### Phase 5: LLM Integration and Optimization
+- [x] Integrate LLM calls into agents (currently placeholders)
+- [x] Implement LLM window handling (e.g., context management for long conversations)
+- [x] Integrate `RateLimiter` into agent calls to manage API usage
+- [x] Refine prompts for each agent for optimal LLM interaction
+
+### Phase 6: Integrate File Management and Other Tools
+- [x] Implement file management tools (Write, Read, Edit, Modify, Delete, List Directory, Save Version, Restore Version, Read Folder, Ignore File, Ignore Folder, Remove File, Remove Folder, View Context)
+- [x] Implement other tools (Quiz Creator, Knowledge Creation, Internet, Chatting, Terminal Integration)
+
+### Phase 7: Testing and Refinement
 - [ ] Develop unit tests for individual agents
 - [ ] Develop integration tests for agent interactions
 - [ ] Perform end-to-end testing of the entire system
 - [ ] Debug and fix any identified issues
 - [ ] Optimize code for performance and resource usage
 
-### Phase 7: Final Commit and Deliver Outcome
+### Phase 8: Final Commit and Deliver Outcome
 - [ ] Ensure all code is well-documented
 - [ ] Final review of the project structure and files
 - [ ] Create a comprehensive `README.md`
 - [ ] Final commit to Git repository
 - [ ] Push all changes to GitHub
 - [ ] Provide final output and instructions to the user
-
