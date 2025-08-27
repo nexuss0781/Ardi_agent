@@ -1,6 +1,7 @@
 class BackendExpert:
     def __init__(self):
-        pass
+        with open("prompts/backend_expert.md", "r") as f:
+            self.prompt = f.read()
 
     def develop_backend(self, backend_tasks: list) -> str:
         # This is a placeholder for the actual implementation.
