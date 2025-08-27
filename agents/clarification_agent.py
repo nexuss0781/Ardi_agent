@@ -1,5 +1,7 @@
 class ClarificationAgent:
     def __init__(self):
+        with open("prompts/clarification_agent.md", "r") as f:
+            self.prompt = f.read()
         self.clarification_todo = {
             "Audience": False,
             "Comprehensive": False
