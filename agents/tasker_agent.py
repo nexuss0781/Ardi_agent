@@ -1,6 +1,7 @@
 class TaskerAgent:
     def __init__(self):
-        pass
+        with open("prompts/tasker_agent.md", "r") as f:
+            self.prompt = f.read()
 
     def classify_features(self, synthesis_content: str) -> dict:
         # This is a placeholder for the actual implementation.
