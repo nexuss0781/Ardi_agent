@@ -1,6 +1,7 @@
 class IdeaGenerator:
     def __init__(self):
-        pass
+        with open("prompts/idea_generator.md", "r") as f:
+            self.prompt = f.read()
 
     def generate_features(self, clarified_content: str) -> str:
         # This is a placeholder for the actual implementation.
