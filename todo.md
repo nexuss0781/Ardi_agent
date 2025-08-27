@@ -7,8 +7,8 @@
 - [x] Initialize Git repository in `ardi_agent`
 - [x] Move `ArdiAgent.md` to `ardi_agent` directory
 - [x] Create `todo.md` file
-- [ ] Add `todo.md` to Git
-- [ ] Add `ArdiAgent.md` to Git
+- [x] Add `todo.md` to Git
+- [x] Add `ArdiAgent.md` to Git
 - [ ] Commit initial files
 - [ ] Push to GitHub repository
 
