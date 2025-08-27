@@ -1,6 +1,8 @@
 class LanguageExpert:
     def __init__(self):
-        pass
+        with open("prompts/language_expert.md", "r") as f:
+            self.prompt = f.read()
+
 
     def formalize_query(self, query: str) -> str:
         # This is a placeholder for the actual implementation.
