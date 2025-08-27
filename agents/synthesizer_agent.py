@@ -11,7 +11,7 @@ class SynthesizerAgent:
         synthesized_content += f"### Analysis\n{analysis_content}\n"
         return synthesized_content
 
-    def save_synthesized_content(self, content: str):
+    def save_synthesized_content(self, content: str, filename: str = "synthesis.md"):
         with open("/home/ubuntu/ardi_agent/synthesis.md", "w") as f:
             f.write(content)
         print("Synthesized content saved to synthesis.md")
