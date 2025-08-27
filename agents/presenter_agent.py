@@ -1,6 +1,7 @@
 class PresenterAgent:
     def __init__(self):
-        pass
+        with open("prompts/presenter_agent.md", "r") as f:
+            self.prompt = f.read()
 
     def present_phase_summary(self, phase_name: str, summary_content: str) -> str:
         # This is a placeholder for the actual implementation.
