@@ -1,12 +1,13 @@
 from utils.llm_client import LLMClient
 from utils.rate_limiter import RateLimiter
+from utils.session_manager import SessionManager
 import json
 
 class TaskerAgent:
-    def __init__(self):
-        with open("Ardi_agent/prompts/tasker_agent.md", "r") as f:
+    def __init__(self, session_manager: SessionManager = None):
+        with open("prompts/tasker_agent.md", "r") as f:
             self.prompt = f.read()
-        self.client = LLMClient()
+        self.client = LLMClient(session_manager=session_manager)
         self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
 
     def classify_features(self, synthesis_content: str) -> dict:

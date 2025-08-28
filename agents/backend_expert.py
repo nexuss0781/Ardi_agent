@@ -4,7 +4,7 @@ from utils.session_manager import SessionManager
 
 class BackendExpert:
     def __init__(self, session_manager: SessionManager = None):
-        with open("Ardi_agent/prompts/backend_expert.md", "r") as f:
+        with open("prompts/backend_expert.md", "r") as f:
             self.prompt = f.read()
         self.client = LLMClient(session_manager=session_manager)
         self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
