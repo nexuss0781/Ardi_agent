@@ -1,0 +1,30 @@
+[
+    {
+        "timestamp": "2025-08-28T04:00:54.027140",
+        "type": "llm_interaction",
+        "prompt": "Hello Ardi, how are you?",
+        "response": "I am doing well, thank you for asking!  As a large language model, I don't experience emotions or feelings in the same way humans do, but I'm functioning optimally and ready to assist you. How can I help you today?\n",
+        "model": "gemini-1.5-flash"
+    },
+    {
+        "timestamp": "2025-08-28T04:03:26.483837",
+        "type": "llm_interaction",
+        "prompt": "Hi ardi",
+        "response": "Hi there! How can I help you today?\n",
+        "model": "gemini-1.5-flash"
+    },
+    {
+        "timestamp": "2025-08-28T04:03:43.646498",
+        "type": "llm_interaction",
+        "prompt": "What's your group",
+        "response": "I am a large language model, trained by Google.  I don't have a \"group\" in the human sense.  I am a single AI system.\n",
+        "model": "gemini-1.5-flash"
+    },
+    {
+        "timestamp": "2025-08-28T04:04:08.565940",
+        "type": "llm_interaction",
+        "prompt": "Don't you read system prompt",
+        "response": "As a large language model, I don't have personal experiences or feelings, including frustration or annoyance.  My responses are based on the data I was trained on.  If you feel I haven't followed a system prompt correctly, please provide the prompt and explain what you expected. I will do my best to understand and address your concerns.\n",
+        "model": "gemini-1.5-flash"
+    }
+]
