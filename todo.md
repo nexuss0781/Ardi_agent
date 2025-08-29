@@ -101,10 +101,10 @@ This checklist outlines the steps to fully implement the multi-agent workflow de
 - [x] Change implementation report to technical report.
 
 ### Phase 14: Implement Debugging Agent
-- [ ] Implement the Debugging Agent's core logic.
-- [ ] Implement `debug_tool` call.
-- [ ] Implement `continue_work` tool call.
-- [ ] Add debugging prompts.
+- [x] Implement the Debugging Agent's core logic.
+- [x] Implement `debug_tool` call.
+- [x] Implement `continue_work` tool call.
+- [x] Add debugging prompts.
 
 ### Phase 15: Implement Quality Assurance Agent
 - [ ] Implement the Quality Assurance Agent's core logic.

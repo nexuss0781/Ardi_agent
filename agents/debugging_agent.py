@@ -1,6 +1,8 @@
 from utils.llm_client import LLMClient
 from utils.rate_limiter import RateLimiter
 from utils.session_manager import SessionManager
+from tools.finish_tool import finish_tool
+from tools.debug_tool import debug_tool
 
 class DebuggingAgent:
     def __init__(self, session_manager: SessionManager = None):
@@ -20,12 +22,15 @@ class DebuggingAgent:
         
         debug_report = self.client.generate_content(debug_prompt)
         
-        # Placeholder for actual tool integration logic
         # In a real scenario, this agent would dynamically decide to use tools
         # based on the debug_report or its internal reasoning.
-        if "suggested_tool_use" in debug_report.lower():
-            print("DebuggingAgent: Detected suggestion for tool use. (Placeholder for tool execution)")
-            # Example: if the LLM suggests reading a log file, the agent would call a file reading tool here.
+        # For now, we'll simulate the debugging process and then call continue_work.
+        print(f"Debugging Agent Report: {debug_report}")
+
+        # Simulate that the issue is resolved and acknowledge the current agent
+        # In a real scenario, this would be a more complex logic to determine if the issue is truly resolved.
+        debug_tool("Debugging Agent has analyzed the issue and provided a report. Assuming issue is resolved for now.")
+        finish_tool() # This will act as continue_work for the calling agent
 
         return debug_report
 
