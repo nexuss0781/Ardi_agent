@@ -35,11 +35,11 @@ This checklist outlines the steps to fully implement the multi-agent workflow de
 - [x] Implement `finish_task` call after QA approval.
 
 ### Phase 5: Implement Analysis Agent
-- [ ] Implement the Analysis Agent's core logic.
-- [ ] Implement reading `clarify.md`.
-- [ ] Implement internet-based analysis (trends, similar apps, features, bottlenecks).
-- [ ] Synthesize findings into `Analysis.md`.
-- [ ] Implement `QA_tool` call.
+- [x] Implement the Analysis Agent's core logic.
+- [x] Implement reading `clarify.md`.
+- [x] Implement internet-based analysis (trends, similar apps, features, bottlenecks).
+- [x] Synthesize findings into `Analysis.md`.
+- [x] Implement `QA_tool` call.
 
 ### Phase 6: Implement Synthesis Agent
 - [ ] Implement the Synthesis Agent's core logic.
