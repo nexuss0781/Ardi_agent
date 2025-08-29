@@ -59,16 +59,16 @@ This checklist outlines the steps to fully implement the multi-agent workflow de
 - [x] Classify features into `frontend.md` and `backend.md`.
 
 ### Phase 9: Implement Backend Agent
-- [ ] Implement the Backend Agent's core logic.
-- [ ] Implement reading `synthesis.md`, `backend.md`, `technical.md`.
-- [ ] Create comprehensive plan in `implementation.md`.
-- [ ] Create `todo.md` checker for backend implementation.
-- [ ] Implement backend development based on `todo.md`.
-- [ ] Create `backend.md` for detailed implementation report.
-- [ ] Inherit infrastructure for frontend.
-- [ ] Include notes for frontend.
-- [ ] Implement `qa_tool` call.
-- [ ] Implement `finish_tool` call.
+- [x] Implement the Backend Agent's core logic.
+- [x] Implement reading `synthesis.md`, `backend.md`, `technical.md`.
+- [x] Create comprehensive plan in `implementation.md`.
+- [x] Create `todo.md` checker for backend implementation.
+- [x] Implement backend development based on `todo.md`.
+- [x] Create `backend.md` for detailed implementation report.
+- [x] Inherit infrastructure for frontend.
+- [x] Include notes for frontend.
+- [x] Implement `qa_tool` call.
+- [x] Implement `finish_tool` call.
 
 ### Phase 10: Implement Frontend Agent
 - [ ] Implement the Frontend Agent's core logic.
