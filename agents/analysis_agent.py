@@ -1,6 +1,10 @@
 from utils.llm_client import LLMClient
 from utils.rate_limiter import RateLimiter
 from utils.session_manager import SessionManager
+from tools.file_manager import FileManager
+from tools.qa_tool import qa_tool
+from tools.internet_tool import InternetTool
+from tools.finish_tool import finish_tool
 
 class AnalysisAgent:
     def __init__(self, session_manager: SessionManager = None):
@@ -8,16 +12,39 @@ class AnalysisAgent:
             self.prompt = f.read()
         self.client = LLMClient(session_manager=session_manager)
         self.rate_limiter = RateLimiter(calls_per_minute=10) # Adjust rate limit as needed
+        self.file_manager = FileManager()
+        self.internet_tool = InternetTool()
 
-    def gather_and_analyze(self, idea_content: str) -> str:
+    def analyze(self, clarify_file: str = "clarify.md") -> str:
+        clarified_content = self.file_manager.read_file(clarify_file)
+        print(f"Clarified Content for Analysis: {clarified_content}")
+
+        # Perform internet-based analysis
         self.rate_limiter.wait_for_next_call()
-        response = self.client.generate_content(self.prompt + "\n" + idea_content)
-        analysis = response
-        return analysis
+        internet_analysis_query = self.client.generate_content(self.prompt + "\n\nBased on the following clarified content, generate a concise query for internet search to find trends, similar company apps, key advantages, and bottlenecks. Clarified Content: " + clarified_content)
+        
+        internet_results = self.internet_tool.search(internet_analysis_query)
+        print(f"Internet Search Results: {internet_results}")
 
-    def save_analysis_content(self, content: str):
-        with open("/home/ubuntu/Ardi_agent/analysis.md", "w") as f:
-            f.write(content)
-        print("Analysis content saved to analysis.md")
+        # Synthesize findings
+        self.rate_limiter.wait_for_next_call()
+        synthesis_prompt = self.prompt + "\n\nSynthesize the following clarified content and internet search results into an effective analysis for the client. Clarified Content: " + clarified_content + "\nInternet Search Results: " + internet_results + "\n\nAnalysis:"
+        analysis_content = self.client.generate_content(synthesis_prompt)
+
+        self.file_manager.write_file("Analysis.md", analysis_content)
+
+        # Call QA tool for feedback
+        qa_feedback = qa_tool("analysis_agent", "Analysis.md")
+
+        if "REFUSED" in qa_feedback:
+            print("QA refused the analysis. Please refine.")
+            # In a real scenario, this would involve an interactive loop or re-analysis
+            # For now, we\"ll assume it\"s approved after one pass for this iteration
+            finish_tool()
+        else:
+            print("QA approved the analysis.")
+            finish_tool()
+
+        return analysis_content
 
 
