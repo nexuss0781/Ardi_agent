@@ -24,15 +24,15 @@ This checklist outlines the steps to fully implement the multi-agent workflow de
 - [x] Implement `finish_task` call and file movement to `private_dir`.
 
 ### Phase 4: Implement Idea Generator Agent
-- [ ] Implement the Idea Generator Agent's core logic.
-- [ ] Implement reading `Clarify.md`.
-- [ ] Create `todo.md` for detailed plan (internal to Idea Generator).
-- [ ] Implement deep analysis based on comprehensivity scope.
-- [ ] Create `idea.md`.
-- [ ] Implement `qa_tool` call for Quality Assurance feedback.
-- [ ] Handle refinement areas and adjust plan.
-- [ ] Implement `chat_tool` for arguing with QA agent using `chat.md`.
-- [ ] Implement `finish_task` call after QA approval.
+- [x] Implement the Idea Generator Agent's core logic.
+- [x] Implement reading `Clarify.md`.
+- [x] Create `todo.md` for detailed plan (internal to Idea Generator).
+- [x] Implement deep analysis based on comprehensivity scope.
+- [x] Create `idea.md`.
+- [x] Implement `qa_tool` call for Quality Assurance feedback.
+- [x] Handle refinement areas and adjust plan.
+- [x] Implement `chat_tool` for arguing with QA agent using `chat.md`.
+- [x] Implement `finish_task` call after QA approval.
 
 ### Phase 5: Implement Analysis Agent
 - [ ] Implement the Analysis Agent's core logic.
