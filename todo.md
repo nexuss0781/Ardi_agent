@@ -107,14 +107,14 @@ This checklist outlines the steps to fully implement the multi-agent workflow de
 - [x] Add debugging prompts.
 
 ### Phase 15: Implement Quality Assurance Agent
-- [ ] Implement the Quality Assurance Agent's core logic.
-- [ ] Implement client-like argumentation for quality and feasibility.
-- [ ] Implement differing requirements for each agent.
-- [ ] Implement `chat_tool` for conversational feedback.
-- [ ] Save suggestions as `[agent_name]_qa.md`.
-- [ ] Implement `review_suggestion` tool.
-- [ ] Create `todo.md` checker for deep quality test.
-- [ ] Implement `APPROVED` or `REFUSED` tool calls.
+- [x] Implement the Quality Assurance Agent's core logic.
+- [x] Implement client-like argumentation for quality and feasibility.
+- [x] Implement differing requirements for each agent.
+- [x] Implement `chat_tool` for conversational feedback.
+- [x] Save suggestions as `[agent_name]_qa.md`.
+- [x] Implement `review_suggestion` tool.
+- [x] Create `todo.md` checker for deep quality test.
+- [x] Implement `APPROVED` or `REFUSED` tool calls.
 
 ### Phase 16: Implement Presenter Agent
 - [ ] Implement the Presenter Agent's core logic.
