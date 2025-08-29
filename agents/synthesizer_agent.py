@@ -27,3 +27,20 @@ class SynthesizerAgent:
         return synthesized_content
 
 
+
+
+    def synthesize_post_implementation(self, frontend_report_file: str = "frontend_report.md", backend_report_file: str = "backend_report.md") -> str:
+        frontend_report_content = self.file_manager.read_file(frontend_report_file)
+        backend_report_content = self.file_manager.read_file(backend_report_file)
+
+        combined_report_content = f"Frontend Report:\n{frontend_report_content}\n\nBackend Report:\n{backend_report_content}"
+
+        self.rate_limiter.wait_for_next_call()
+        post_implementation_content = self.client.generate_content(self.prompt + "\n\nOrganize and synthesize the following frontend and backend reports into a post-implementation document. Beautify it for readability by adding emojis in a professional, non-technical way. Ensure the response is a complete and comprehensive document, without truncation.\n\n" + combined_report_content)
+
+        self.file_manager.write_file("post_implementation.md", post_implementation_content)
+        finish_tool()
+
+        return post_implementation_content
+
+
