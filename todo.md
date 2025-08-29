@@ -1,59 +1,132 @@
-## Todo List for Ardi Agent Development
+## Multi-Agent Workflow Implementation Checklist
 
-This document outlines the remaining tasks for developing the Ardi Agent chat interface and integrating it with the backend.
+This checklist outlines the steps to fully implement the multi-agent workflow described in `WORKFLOW.md`.
 
-### Phase 1: Enhance Frontend (Chat Window & Taskbar) (Completed)
-- [x] Create React app for the chat frontend using `manus-create-react-app`.
-- [x] Update `App.jsx` to render `ChatWindow` component.
-- [x] Create basic `ChatWindow.jsx` component with chat UI.
-- [x] Apply basic dark mode aesthetic using `App.css`.
-- [x] Install `axios` for API calls.
-- [x] **ENHANCE**: Create modern, aesthetic, professional chat window design
-- [x] **NEW**: Implement collapsible taskbar to track current workflow
-- [x] **NEW**: Add workflow progress indicators
-- [x] **NEW**: Implement modern UI components with smooth animations
-- [x] **NEW**: Add responsive design for mobile and desktop
+### Phase 1: Understand the complete workflow and create a detailed todo.md
+- [x] Read and analyze `WORKFLOW.md`.
+- [x] Create `todo.md` with detailed implementation steps for each agent.
 
-### Phase 2: Implement `finish_task` Tool and Orchestrator Logic (Completed)
-- [x] **NEW**: Create `finish_task` tool that agents can call
-- [x] **NEW**: Modify Orchestrator to read `finish_task` signals
-- [x] **NEW**: Implement workflow progression logic in Orchestrator
-- [x] **NEW**: Add agent state management
-- [x] **NEW**: Create agent transition system
+### Phase 2: Implement Language Expert Agent
+- [x] Implement the Language Expert Agent's core logic.
+- [x] Ensure the agent can formalize queries professionally.
+- [x] Implement the `quez` tool for user confirmation.
+- [x] Handle `clarify.md` attachment for starting from communication agent.
+- [x] Create `Query.md` with the formalized query.
+- [x] Implement `finish_tool` call.
 
-### Phase 3: Integrate `finish_task` into Agent Workflow (Completed)
-- [x] **NEW**: Modify Language Expert to call `finish_task` when complete
-- [x] **NEW**: Modify Clarification Agent to call `finish_task` when complete
-- [x] **NEW**: Update all agents to use `finish_task` tool
-- [x] **NEW**: Test agent-to-agent transitions
-- [x] **NEW**: Ensure proper workflow continuation
+### Phase 3: Implement Clarification Tool and Agent
+- [ ] Implement the Clarification Agent's core logic.
+- [ ] Implement reading `Query.md`.
+- [ ] Implement different clarification areas (comprehensivity, similar apps, unwanted features, UI/UX, constraints).
+- [ ] Handle `clarify.md` provided by orchestrator.
+- [ ] Implement `quez` tool for summarizing user needs and confirmation.
+- [ ] Create `create.md` with the final user output.
+- [ ] Implement `finish_task` call and file movement to `private_dir`.
 
-### Phase 4: Prompt Engineering for Agents (Completed)
-- [x] **NEW**: Engineer system prompts for Language Expert
-- [x] **NEW**: Engineer system prompts for Clarification Agent
-- [x] **NEW**: Engineer system prompts for Idea Generator
-- [x] **NEW**: Engineer system prompts for Analysis Agent
-- [x] **NEW**: Engineer system prompts for all other agents
-- [x] **NEW**: Test and refine agent prompts
+### Phase 4: Implement Idea Generator Agent
+- [ ] Implement the Idea Generator Agent's core logic.
+- [ ] Implement reading `Clarify.md`.
+- [ ] Create `todo.md` for detailed plan (internal to Idea Generator).
+- [ ] Implement deep analysis based on comprehensivity scope.
+- [ ] Create `idea.md`.
+- [ ] Implement `qa_tool` call for Quality Assurance feedback.
+- [ ] Handle refinement areas and adjust plan.
+- [ ] Implement `chat_tool` for arguing with QA agent using `chat.md`.
+- [ ] Implement `finish_task` call after QA approval.
 
-### Phase 5: Test Enhanced System (Completed)
-- [x] Test complete workflow from user prompt to final output
-- [x] Verify agent transitions work correctly
-- [x] Test frontend-backend integration
-- [x] Debug any integration issues
+### Phase 5: Implement Analysis Agent
+- [ ] Implement the Analysis Agent's core logic.
+- [ ] Implement reading `clarify.md`.
+- [ ] Implement internet-based analysis (trends, similar apps, features, bottlenecks).
+- [ ] Synthesize findings into `Analysis.md`.
+- [ ] Implement `QA_tool` call.
 
-### Phase 6: Deliver Solution to User (Completed)
-- [x] Provide instructions for running the enhanced application
-- [x] Present the working enhanced chat interface to the user
+### Phase 6: Implement Synthesis Agent
+- [ ] Implement the Synthesis Agent's core logic.
+- [ ] Implement reading `idea.md` and `analysis.md`.
+- [ ] Organize and synthesize content into `pre_implementation.md`.
+- [ ] Beautify for readability with emojis.
+- [ ] Implement `finish_task` call.
 
-### Completed Work
-- [x] Examine existing Ardi Agent codebase
-- [x] Create Flask backend using `manus-create-flask-app`
-- [x] Copy Ardi Agent components to Flask app
-- [x] Create `chat.py` route for chat functionality
-- [x] Add `run_simple_workflow` to `orchestrator.py`
-- [x] Fix import paths in `orchestrator.py`
-- [x] Update `main.py` to include chat routes and CORS support
-- [x] Install required dependencies
-- [x] Configure API key and test basic AI responses
+### Phase 7: Implement Technical Agent (for pre-implementation)
+- [ ] Implement the Technical Agent's core logic.
+- [ ] Implement reading `synthesis.md`.
+- [ ] Create comprehensive implementation plan and technical roadmap.
+
+### Phase 8: Implement Task Agent
+- [ ] Implement the Task Agent's core logic.
+- [ ] Implement reading `Synthesis.md`.
+- [ ] Classify features into `frontend.md` and `backend.md`.
+
+### Phase 9: Implement Backend Agent
+- [ ] Implement the Backend Agent's core logic.
+- [ ] Implement reading `synthesis.md`, `backend.md`, `technical.md`.
+- [ ] Create comprehensive plan in `implementation.md`.
+- [ ] Create `todo.md` checker for backend implementation.
+- [ ] Implement backend development based on `todo.md`.
+- [ ] Create `backend.md` for detailed implementation report.
+- [ ] Inherit infrastructure for frontend.
+- [ ] Include notes for frontend.
+- [ ] Implement `qa_tool` call.
+- [ ] Implement `finish_tool` call.
+
+### Phase 10: Implement Frontend Agent
+- [ ] Implement the Frontend Agent's core logic.
+- [ ] Implement reading `synthesis.md`, `frontend.md`, `technical.md`, `backend.md`.
+- [ ] Create comprehensive implementation plan in `implementation.md`.
+- [ ] Classify implementation plan into `todo` for roadmap.
+- [ ] Implement appealing frontend designs and technical prompts.
+- [ ] Implement `finish_task` while editing `todo.md`.
+- [ ] Create `frontend.md`.
+- [ ] Connect backend with frontend.
+- [ ] Implement `qa_tool` call.
+- [ ] Implement `finish_task` call.
+
+### Phase 11: Implement Fullstack Agent
+- [ ] Implement the Fullstack Agent's core logic.
+- [ ] Implement reading codebase and key files.
+- [ ] Implement End-to-End testing for functionality and integrity.
+- [ ] Use different test tools.
+- [ ] Check database, backend, and frontend components.
+- [ ] Implement `finish_task` call.
+
+### Phase 12: Implement Synthesizer Agent (for post-implementation)
+- [ ] Implement the Synthesizer Agent's core logic.
+- [ ] Implement reading `frontend.md` and `backend.md`.
+- [ ] Synthesize content into `post_implementation.md`.
+
+### Phase 13: Implement Technical Agent (for post-implementation report)
+- [ ] Implement the Technical Agent's core logic.
+- [ ] Implement reading `post_implementation.md` and codebase.
+- [ ] Change implementation report to technical report.
+
+### Phase 14: Implement Debugging Agent
+- [ ] Implement the Debugging Agent's core logic.
+- [ ] Implement `debug_tool` call.
+- [ ] Implement `continue_work` tool call.
+- [ ] Add debugging prompts.
+
+### Phase 15: Implement Quality Assurance Agent
+- [ ] Implement the Quality Assurance Agent's core logic.
+- [ ] Implement client-like argumentation for quality and feasibility.
+- [ ] Implement differing requirements for each agent.
+- [ ] Implement `chat_tool` for conversational feedback.
+- [ ] Save suggestions as `[agent_name]_qa.md`.
+- [ ] Implement `review_suggestion` tool.
+- [ ] Create `todo.md` checker for deep quality test.
+- [ ] Implement `APPROVED` or `REFUSED` tool calls.
+
+### Phase 16: Implement Presenter Agent
+- [ ] Implement the Presenter Agent's core logic.
+- [ ] Summarize whole work and implementation.
+- [ ] Present key files and explanations.
+- [ ] Implement `finish_task` call.
+
+### Phase 17: Commit and push all changes
+- [ ] Commit changes to the repository.
+- [ ] Push changes to the remote repository.
+
+### Phase 18: Report final implementation status to user
+- [ ] Provide a summary of the completed implementation.
+- [ ] Attach relevant files or links.
 
