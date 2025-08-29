@@ -71,16 +71,16 @@ This checklist outlines the steps to fully implement the multi-agent workflow de
 - [x] Implement `finish_tool` call.
 
 ### Phase 10: Implement Frontend Agent
-- [ ] Implement the Frontend Agent's core logic.
-- [ ] Implement reading `synthesis.md`, `frontend.md`, `technical.md`, `backend.md`.
-- [ ] Create comprehensive implementation plan in `implementation.md`.
-- [ ] Classify implementation plan into `todo` for roadmap.
-- [ ] Implement appealing frontend designs and technical prompts.
-- [ ] Implement `finish_task` while editing `todo.md`.
-- [ ] Create `frontend.md`.
-- [ ] Connect backend with frontend.
-- [ ] Implement `qa_tool` call.
-- [ ] Implement `finish_task` call.
+- [x] Implement the Frontend Agent's core logic.
+- [x] Implement reading `synthesis.md`, `frontend.md`, `technical.md`, `backend.md`.
+- [x] Create comprehensive implementation plan in `implementation.md`.
+- [x] Classify implementation plan into `todo` for roadmap.
+- [x] Implement appealing frontend designs and technical prompts.
+- [x] Implement `finish_task` while editing `todo.md`.
+- [x] Create `frontend.md`.
+- [x] Connect backend with frontend.
+- [x] Implement `qa_tool` call.
+- [x] Implement `finish_tool` call.
 
 ### Phase 11: Implement Fullstack Agent
 - [ ] Implement the Fullstack Agent's core logic.
