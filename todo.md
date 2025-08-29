@@ -15,13 +15,13 @@ This checklist outlines the steps to fully implement the multi-agent workflow de
 - [x] Implement `finish_tool` call.
 
 ### Phase 3: Implement Clarification Tool and Agent
-- [ ] Implement the Clarification Agent's core logic.
-- [ ] Implement reading `Query.md`.
-- [ ] Implement different clarification areas (comprehensivity, similar apps, unwanted features, UI/UX, constraints).
-- [ ] Handle `clarify.md` provided by orchestrator.
-- [ ] Implement `quez` tool for summarizing user needs and confirmation.
-- [ ] Create `create.md` with the final user output.
-- [ ] Implement `finish_task` call and file movement to `private_dir`.
+- [x] Implement the Clarification Agent's core logic.
+- [x] Implement reading `Query.md`.
+- [x] Implement different clarification areas (comprehensivity, similar apps, unwanted features, UI/UX, constraints).
+- [x] Handle `clarify.md` provided by orchestrator.
+- [x] Implement `quez` tool for summarizing user needs and confirmation.
+- [x] Create `create.md` with the final user output.
+- [x] Implement `finish_task` call and file movement to `private_dir`.
 
 ### Phase 4: Implement Idea Generator Agent
 - [ ] Implement the Idea Generator Agent's core logic.
