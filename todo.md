@@ -42,11 +42,11 @@ This checklist outlines the steps to fully implement the multi-agent workflow de
 - [x] Implement `QA_tool` call.
 
 ### Phase 6: Implement Synthesis Agent
-- [ ] Implement the Synthesis Agent's core logic.
-- [ ] Implement reading `idea.md` and `analysis.md`.
-- [ ] Organize and synthesize content into `pre_implementation.md`.
-- [ ] Beautify for readability with emojis.
-- [ ] Implement `finish_task` call.
+- [x] Implement the Synthesis Agent's core logic.
+- [x] Implement reading `idea.md` and `analysis.md`.
+- [x] Organize and synthesize content into `pre_implementation.md`.
+- [x] Beautify for readability with emojis.
+- [x] Implement `finish_task` call.
 
 ### Phase 7: Implement Technical Agent (for pre-implementation)
 - [ ] Implement the Technical Agent's core logic.
