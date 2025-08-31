@@ -1,5 +1,5 @@
-from agents.quality_assurance_agent import QualityAssuranceAgent
 from utils.session_manager import SessionManager
+from agents.quality_assurance_agent import QualityAssuranceAgent
 
 class QATool:
     def __init__(self, session_manager: SessionManager = None):

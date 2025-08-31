@@ -3,7 +3,7 @@ from utils.rate_limiter import RateLimiter
 from utils.session_manager import SessionManager
 from tools.file_manager import FileManager
 from tools.chat_tool import chat_tool
-from tools.qa_tool import qa_tool # Importing qa_tool to use its APPROVED/REFUSED signals
+
 
 class QualityAssuranceAgent:
     def __init__(self, session_manager: SessionManager = None):

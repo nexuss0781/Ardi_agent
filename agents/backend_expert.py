@@ -39,9 +39,7 @@ class BackendExpert:
         # In a real scenario, this would involve actual code generation and execution.
         # For now, we'll simulate progress by marking todo items as done.
         print("Simulating backend development based on backend_todo.md...")
-        # Assuming all tasks are 
-
-completed for this simulation.")
+        # Assuming all tasks are completed for this simulation.
 
         # Create backend.md for detail implementation report
         self.rate_limiter.wait_for_next_call()
