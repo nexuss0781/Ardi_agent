@@ -56,7 +56,7 @@ COPY --from=backend-builder /usr/local/bin /usr/local/bin
 COPY --from=frontend-builder /app/frontend/dist /var/www/html
 
 # Copy nginx configuration
-COPY ardi_chat_frontend/nginx.conf /etc/nginx/sites-available/default
+COPY ardi_chat_frontend/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Create supervisor configuration
 RUN mkdir -p /var/log/supervisor
