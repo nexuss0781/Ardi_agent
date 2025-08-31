@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./ardi_chat_api
+    container_name: ardi_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_APP=src/app.py
+    volumes:
+      - ./ardi_chat_api/sessions:/app/sessions
+    networks:
+      - ardi_network
+    restart: unless-stopped
+
+  frontend:
+    build: ./ardi_chat_frontend
+    container_name: ardi_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - ardi_network
+    restart: unless-stopped
+
+networks:
+  ardi_network:
+    driver: bridge
+
+volumes:
+  sessions_data:
+
