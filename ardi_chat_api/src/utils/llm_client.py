@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
-from utils.session_manager import SessionManager
+from src.utils.session_manager import SessionManager
 
 load_dotenv()
 

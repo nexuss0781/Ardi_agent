@@ -1,6 +1,6 @@
 import importlib
 import os
-from utils.session_manager import SessionManager
+from src.utils.session_manager import SessionManager
 
 class ToolManager:
     def __init__(self, session_manager: SessionManager = None):

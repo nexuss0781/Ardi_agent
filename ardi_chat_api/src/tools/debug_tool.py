@@ -1,5 +1,5 @@
 from agents.debugging_agent import DebuggingAgent
-from utils.session_manager import SessionManager
+from src.utils.session_manager import SessionManager
 
 class DebugTool:
     def __init__(self, session_manager: SessionManager = None):
