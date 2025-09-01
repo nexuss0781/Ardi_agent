@@ -1,6 +1,6 @@
-from utils.llm_client import LLMClient
-from utils.rate_limiter import RateLimiter
-from utils.session_manager import SessionManager
+from src.utils.llm_client import LLMClient
+from src.utils.rate_limiter import RateLimiter
+from src.utils.session_manager import SessionManager
 
 class FullstackExpert:
     def __init__(self, session_manager: SessionManager = None):
