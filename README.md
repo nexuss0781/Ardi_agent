@@ -17,6 +17,7 @@ Ardi Agent is an advanced Agentic AI system designed to streamline the developme
 Ardi Agent operates through a series of interconnected phases, each driven by a team of specialized AI agents. The workflow is orchestrated to ensure a logical progression from understanding a user's query to delivering a comprehensive development plan and simulated implementation.
 
 ### Phase 1: Query Processing & Planning
+
 This phase focuses on deeply understanding the user's request and formulating a detailed development roadmap.
 
 *   **Language Expert:** Refines and formalizes the initial user query.
@@ -30,6 +31,7 @@ This phase focuses on deeply understanding the user's request and formulating a 
 *   **Presenter Agent:** Summarizes the completed planning phase and prepares for implementation.
 
 ### Phase 2: Implementation & Validation
+
 This phase translates the development plan into a simulated implementation, focusing on backend, frontend, and integration aspects.
 
 *   **Tasker Agent:** Categorizes features into distinct backend and frontend development tasks.
@@ -61,12 +63,12 @@ Ardi_agent/
 │   ├── llm_client.py       # Centralized LLM interaction handler
 │   ├── rate_limiter.py     # Manages API call rates
 │   └── session_manager.py  # Manages session history and action logging
-├── deep_analysis.md        # Detailed analysis of the codebase and improvements
+├── [deep_analysis.md](deep_analysis.md)        # Detailed analysis of the codebase and improvements
 ├── main.py                 # Entry point for the application
 ├── orchestrator.py         # Main workflow orchestrator
 ├── README.md               # This file
-├── todo_2.md               # Development roadmap and task tracker
-└── ...                     # Other generated output files (analysis.md, idea.md, etc.)
+├── [todo_2.md](todo_2.md)               # Development roadmap and task tracker
+└── ...                     # Other generated output files ([analysis.md](analysis.md), [idea.md](idea.md), etc.)
 ```
 
 ## 🛠️ Setup and Installation
@@ -81,11 +83,10 @@ Ardi_agent/
     ```bash
     pip install -r requirements.txt
     ```
-    *(Note: A `requirements.txt` file is not currently present but should be created to list all Python dependencies like `python-dotenv` and `google-generativeai`.)*
 
 3.  **Configure API Key:**
     Create a `.env` file in the root directory of the project and add your Gemini API key:
-    ```
+    ```env
     GEMINI_API_KEY=YOUR_GEMINI_API_KEY
     ```
     Replace `YOUR_GEMINI_API_KEY` with your actual Gemini API key.
@@ -106,7 +107,11 @@ Contributions are highly welcome! Please feel free to fork the repository, imple
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details. (Note: A `LICENSE` file is not currently included in the repository and would need to be added.)
+This project is licensed under the MIT License. See the `LICENSE` file for details. *(Note: A `LICENSE` file should be added to the repository.)*
 
+## 📚 Additional Documentation
 
+For more detailed information about deployment and Docker setup, please refer to:
 
+- [Deployment Guide](README_DEPLOYMENT.md) - Instructions for deploying Ardi Agent
+- [Docker Setup](README_DOCKER.md) - Docker configuration and containerization guide
